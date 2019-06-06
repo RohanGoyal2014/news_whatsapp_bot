@@ -25,7 +25,7 @@ def fetch_reply(msg, session_id):
         for row in news:
             news_str+= "\n\n{}\n\n{}\n\n".format(row['title'],row['link'])
         
-        return news_str
+        return news_strgi
 
 
 
@@ -36,7 +36,7 @@ def fetch_reply(msg, session_id):
 def get_news(parameters):
     client.topic = parameters.get('news type')
     client.language = parameters.get('language')
-    client.location = parameters.get('geo-country')
+    client.location = parameters.get('geo-country', '')
     print(parameters)
     return client.get_news()
     # return '1'
